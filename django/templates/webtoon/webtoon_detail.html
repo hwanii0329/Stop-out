@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Webtoon detail{% endblock %}
+{% block content %}
+    <ul>
+    {% for episode in episodes %}
+        <li>{{ episode.episode_id }} | {{ episode.title }} | {{ episode.rating }} | {{ episode.created_date }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
