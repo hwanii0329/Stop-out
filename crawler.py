@@ -26,6 +26,8 @@ def get_episode_list(webtoon_id, page):
     tr_list = soup.find('table', class_='viewList').findAll('tr')[1:]
     result = []
     for tr in tr_list:
+        if 'band_banner' in tr.get('class'):
+            continue
         title = tr.find('td', class_='title').find('a').text
         rating = tr.find('div', class_='rating_type').find('strong').text
         created_date = tr.find('td', class_='num').text
@@ -46,5 +48,5 @@ def get_episode_list(webtoon_id, page):
 
 if __name__ == '__main__':
 
-    for toon in get_episode_list(703835, 1):
+    for toon in get_episode_list(183559, 1):
         print(toon)
