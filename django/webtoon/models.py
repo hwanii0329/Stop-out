@@ -21,7 +21,6 @@ class Webtoon(models.Model):
             soup = bs(response.text, 'lxml')
             tr_list = soup.find('table', class_='viewList').findAll('tr')[1:]
 
-
             for tr in tr_list:
                 if tr.get('class') and 'band_banner' in tr.get('class'):
                     continue
@@ -36,7 +35,7 @@ class Webtoon(models.Model):
                 url_thumbnail = tr.find('td').find('img').get('src')
                 Episode.objects.create(
                     episode_id=episode_id,
-                    # url_thumbnail=url_thumbnail,
+                    url_thumbnail=url_thumbnail,
                     title=title,
                     rating=rating,
                     created_date=created_date,
@@ -49,18 +48,16 @@ class Webtoon(models.Model):
             i += 1
 
 
-
 class Episode(models.Model):
     webtoon = models.ForeignKey(Webtoon, on_delete=models.CASCADE)
     episode_id = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     rating = models.CharField(max_length=200)
     created_date = models.CharField(max_length=200)
-    # url_thumbnail = models.TextField()
+    url_thumbnail = models.TextField(default='')
+
     def __str__(self):
         return f'Episode: {self.webtoon} | {self.title}'
 
-
     class Meta:
         ordering = ['-created_date']
-
