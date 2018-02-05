@@ -1,3 +1,8 @@
+
+.title{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 .fz0{
     font-size: 0;
 }
@@ -10,4 +15,7 @@
 }
 .center{
     text-align: center;
+}
+.logo{
+    padding-bottom: 60px;
 }

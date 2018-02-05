@@ -2,8 +2,12 @@
 {% block title %}검색 결과{% endblock %}
 {% block content %}
     <div class="list-group">
+    {% if search_list %}
     {% for toon in search_list %}
         <a href="{% url 'webtoon:save-webtoon' webtoon_id=toon.webtoon_id title=toon.title %}" class="list-group-item-action list-group-item">{{ toon.title }}</a>
     {% endfor %}
+    {% else %}
+        <h2>검색 결과가 없습니다.</h2>
+    {% endif %}
     </div>
 {% endblock %}

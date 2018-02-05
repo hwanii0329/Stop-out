@@ -2,7 +2,9 @@
 
 {% block title %}Webtoon list{% endblock %}
 {% block content %}
+    <div class="list-group">
     {% for webtoon in webtoons %}
-        <div class=""><a href="{% url 'webtoon:webtoon-detail' pk=webtoon.webtoon_id %}" class="page-link">{{ webtoon.title }}</a></div>
+        <a href="{% url 'webtoon:webtoon-detail' pk=webtoon.pk %}" class="list-group-item-action list-group-item">{{ webtoon.title }}</a>
     {% endfor %}
+    </div>
 {% endblock %}
