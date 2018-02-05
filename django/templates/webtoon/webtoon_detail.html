@@ -17,7 +17,7 @@
         <tr>
             <th><img class="img-thumbnail img100" src="{{ episode.url_thumbnail }}"></th>
             <td>{{ episode.episode_id }}</td>
-            <td>{{ episode.title }}</td>
+            <td><a href="http://comic.naver.com/webtoon/detail.nhn?titleId={{ episode.webtoon.webtoon_id }}&no={{ episode.episode_id }}">{{ episode.title }}</a></td>
             <td>{{ episode.rating }}</td>
             <td>{{ episode.created_date }}</td>
         </tr>
