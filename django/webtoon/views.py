@@ -14,7 +14,7 @@ def webtoon_list(request):
 
 
 def webtoon_detail(request, pk):
-    episodes = Episode.objects.filter(pk=pk)  # 여기 pk는 Webtoon의 pk
+    episodes = Episode.objects.filter(webtoon_id=pk)
     context = {
         'episodes': episodes,
     }
@@ -43,5 +43,6 @@ def save_webtoon(request, webtoon_id, title):
         webtoon.get_episode_list()
         return redirect('webtoon:webtoon-detail', pk=webtoon.pk)
     else:
-        toon = Webtoon.objects.filter(pk=webtoon_id)
+        toon = Webtoon.objects.get(webtoon_id=webtoon_id)
+        print(toon)
         return redirect('webtoon:webtoon-detail', pk=toon.pk)

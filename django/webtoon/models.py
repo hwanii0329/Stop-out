@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup as bs
 
 
 class Webtoon(models.Model):
+    id = models.AutoField(primary_key=True)
     webtoon_id = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
 
@@ -31,7 +32,7 @@ class Webtoon(models.Model):
                 title = tr.find('td', class_='title').find('a').text
                 rating = tr.find('div', class_='rating_type').find('strong').text
                 created_date = tr.find('td', class_='num').text
-                # url_thumbnail = tr.find('td').find('img').get('src')
+                url_thumbnail = tr.find('td').find('img').get('src')
                 Episode.objects.create(
                     episode_id=episode_id,
                     # url_thumbnail=url_thumbnail,
@@ -53,7 +54,7 @@ class Episode(models.Model):
     title = models.CharField(max_length=200)
     rating = models.CharField(max_length=200)
     created_date = models.CharField(max_length=200)
-
+    # url_thumbnail = models.TextField()
     def __str__(self):
         return f'Episode: {self.webtoon} | {self.title}'
 

@@ -2,9 +2,26 @@
 
 {% block title %}Webtoon detail{% endblock %}
 {% block content %}
-    <ul class="list-group">
+<table class="table">
+    <thead>
+        <tr>
+            <th>이미지</th>
+            <th>번호</th>
+            <th>제목</th>
+            <th>별점</th>
+            <th>등록일</th>
+        </tr>
+    </thead>
+    <tbody>
     {% for episode in episodes %}
-        <li class="list-group-item">{{ episode.episode_id }} | {{ episode.title }} | {{ episode.rating }} | {{ episode.created_date }}</li>
+        <tr>
+            <th><img src=""></th>
+            <td>{{ episode.episode_id }}</td>
+            <td>{{ episode.title }}</td>
+            <td>{{ episode.rating }}</td>
+            <td>{{ episode.created_date }}</td>
+        </tr>
     {% endfor %}
-    </ul>
+    </tbody>
+</table>
 {% endblock %}
