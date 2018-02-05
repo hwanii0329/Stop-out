@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul class="list-group">
+    {% for toon in search_list %}
+        <li class=""><a href="{% url 'webtoon:save-webtoon' webtoon_id=toon.webtoon_id title=toon.title %}" class="page-link">{{ toon.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+.fz0{
+    font-size: 0;
+}
+.verticalMiddle{
+    vertical-align: middle;
+    display: inline-block;
+}
+.width60{
+    width: 60%;
+}
+.center{
+    text-align: center;
+}

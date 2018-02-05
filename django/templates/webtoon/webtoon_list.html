@@ -3,6 +3,6 @@
 {% block title %}Webtoon list{% endblock %}
 {% block content %}
     {% for webtoon in webtoons %}
-        <div><a href="{% url 'webtoon:webtoon-detail' pk=webtoon.id %}">{{ webtoon.title }}</a></div>
+        <div class=""><a href="{% url 'webtoon:webtoon-detail' pk=webtoon.webtoon_id %}" class="page-link">{{ webtoon.title }}</a></div>
     {% endfor %}
 {% endblock %}

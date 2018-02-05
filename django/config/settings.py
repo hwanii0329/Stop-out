@@ -20,6 +20,11 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+    STATIC_DIR,
+]
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '9=deixq7winxj*plcelu+i9*cm9&1yqp=brflob9zjkgo+4chz'
 
