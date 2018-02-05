@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 
-
-
 {% block content %}
 <div class="logo center">
     <img src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/h5b/image/4-cEVqd5T1cINxE7v9hikqUwPPs.png" alt="">
 </div>
-    <div class="center">
-        <form action="{% url 'webtoon:search-list' %}" class="" method="get">
-            <div class="form-group fz0">
-                <input type="text" class="form-control verticalMiddle width60" name="keyword" placeholder="웹툰 제목을 입력해주세요">
-                <button type="submit" class="btn btn-primary">검색</button>
-            </div>
-        </form>
-    </div>
+<div class="center">
+    <form action="{% url 'webtoon:search-list' %}" class="" method="get">
+        <div class="form-group fz0">
+            <input type="text" class="form-control verticalMiddle width60" name="keyword" placeholder="웹툰 제목을 입력해주세요">
+            <button type="submit" class="btn btn-primary">검색</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

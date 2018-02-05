@@ -10,11 +10,22 @@
     <link rel="stylesheet" href="{% static 'css/webtoon.css' %}">
 </head>
 <body>
-
+<div class="header">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'webtoon:index' %}">Search</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'webtoon:webtoon-list' %}">Database</a>
+        </li>
+    </ul>
+</div>
 <h1 class="center title">{% block title %}{% endblock %}</h1>
-<div class="container">
-    {% block content %}
-    {% endblock %}
+<div class="wrapper">
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
 </div>
 </body>
 </html>
